@@ -2,22 +2,33 @@
 	margin: 0;
 	min-height: 100vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background:linear-gradient(#89BF9C,#E6E4C6);
  }
+
+ #pantalla, footer, button{
+	 font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 
  #container{
 	position: relative;
 	border: 2px solid black;
 	border-radius: 5px;
-	background-color: rgb(241, 255, 241);
+	background-color: rgba(0, 0, 0, 0.038);
+	padding: 5px;
+	margin: auto;
 }
 
 #botonesContainer{
 	width: 400px;
 	aspect-ratio: 1;
+	margin-top: 5px;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	gap:5px;
 	grid-template-areas:
 		"ac dividido por menos"
 		"siete ocho nueve mas"
@@ -27,11 +38,13 @@
 }
 
 #pantalla{
-	font-size: xx-large;
+	font-size: 3rem;
 	text-align: end;
-	margin: 20px;
 	padding: 10px;
-	background-color: rgba(0, 0, 0, 0.05);
+	background-color: rgba(255, 255, 255, 0.05);
+	margin: 0;
+	border: 1px solid black;
+	border-radius: 2px;
 }
 
 #indicadorOperacion{
@@ -44,6 +57,13 @@
 button{
 	color: rgb(0, 0, 0);
 	font-size: larger;
+	background-color: rgba(255, 255, 255, 0.54);
+	border-width: 1px;
+	transition:30ms;
+	border-radius: 2px;
+}
+button:hover{
+	background-color: rgba(255, 255, 255, 0.667);
 }
 
 #cero{
@@ -101,11 +121,9 @@ button{
 	grid-area: igual;
 }
 
-
-/*
-c,ce,
-7,8,9,*
-4,5,6,-
-1,2,3,+
-c,0,.,=
-*/
+footer{
+	background-color: rgba(0, 0, 0, 0.073);
+	width: 100%;
+	text-align: center;
+	margin-top: auto;
+}

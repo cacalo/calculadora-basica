@@ -1,0 +1,111 @@
+ body{
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+ }
+
+ #container{
+	position: relative;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: rgb(241, 255, 241);
+}
+
+#botonesContainer{
+	width: 400px;
+	aspect-ratio: 1;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas:
+		"ac dividido por menos"
+		"siete ocho nueve mas"
+		"cuatro cinco seis mas"
+		"uno dos tres igual"
+		"c cero punto igual";
+}
+
+#pantalla{
+	font-size: xx-large;
+	text-align: end;
+	margin: 20px;
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+#indicadorOperacion{
+	font-size: x-large;
+	position: absolute;
+	left: 30px;
+	top: 10px;
+}
+
+button{
+	color: rgb(0, 0, 0);
+	font-size: larger;
+}
+
+#cero{
+	grid-area: cero;
+}
+
+#uno{
+	grid-area: uno;
+}
+
+#dos{
+	grid-area: dos;
+}
+
+#tres{
+	grid-area: tres;
+}
+#cuatro{
+	grid-area: cuatro;
+}
+#cinco{
+	grid-area: cinco;
+}
+#seis{
+	grid-area: seis;
+}
+#siete{
+	grid-area: siete;
+}
+#ocho{
+	grid-area: ocho;
+}
+#nueve{
+	grid-area: nueve;
+}
+#mas{
+	grid-area: mas;
+}
+#menos{
+	grid-area: menos;
+}
+#por{
+	grid-area: por;
+}
+#dividido{
+	grid-area: dividido;
+}
+#clear{
+	grid-area: c;
+}
+#allClear{
+	grid-area: ac;
+}
+#igual{
+	grid-area: igual;
+}
+
+
+/*
+c,ce,
+7,8,9,*
+4,5,6,-
+1,2,3,+
+c,0,.,=
+*/

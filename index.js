@@ -58,6 +58,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+//Funciones
 function numeroClickado(numero) {
   if (numeroReinicia) {
     pantalla = 0;

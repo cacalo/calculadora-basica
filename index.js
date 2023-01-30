@@ -22,8 +22,8 @@ botonesOperaciones.forEach((boton) => {
 });
 document.getElementById("clear").addEventListener("click", limpiarNumeroActual);
 document.getElementById("allClear").addEventListener("click", reset);
+document.getElementById("punto").addEventListener("click", punto);
 document.addEventListener("keydown", (e) => {
-  console.log(e.key);
   switch (e.key) {
     case "0":
     case "1":
@@ -47,8 +47,13 @@ document.addEventListener("keydown", (e) => {
       operacionClickeada("=");
       break;
 		case "Escape":
+			reset()
+			break;
 		case "Backscape":
       limpiarNumeroActual()
+      break;
+		case ".":
+      punto()
       break;
   }
 });
@@ -58,18 +63,14 @@ function numeroClickado(numero) {
     pantalla = 0;
     numeroReinicia = false;
   }
-  // console.log("Numero", numero);
-  numeroPantalla = parseInt(pantalla);
+  numeroPantalla = parseFloat(pantalla);
   if (!isNaN(numeroPantalla)) {
-    pantalla = parseInt(pantalla.toString() + numero);
+    pantalla = parseFloat(pantalla.toString() + numero);
     actualizarPantalla();
   }
-  console.log(numeroPantalla);
 }
 
 function operacionClickeada(operacion) {
-  // console.log("Operación",operacion)
-  console.log(numeroAnterior, pantalla);
   if (!numeroAnterior) {
     if (pantalla === 0) return; //Apreté una operación sin tener número
     numeroAnterior = pantalla;
@@ -110,7 +111,6 @@ function operacionClickeada(operacion) {
       numeroAnterior = undefined;
     }
     numeroReinicia = true;
-    console.log("Numero anterior", numeroAnterior);
   }
 }
 
@@ -127,6 +127,11 @@ function reset() {
   limpiarNumeroActual();
   (numeroAnterior = undefined),
     (indicadorOperacionElement.textContent = undefined);
+}
+
+function punto(){
+	if(!Number.isInteger(pantalla)) return
+	actualizarPantalla(pantalla += ".");
 }
 
 //Ejecución

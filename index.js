@@ -134,6 +134,3 @@ function punto(){
 	if(!Number.isInteger(pantalla)) return
 	actualizarPantalla(pantalla += ".");
 }
-
-//Ejecución
-actualizarPantalla(0);

@@ -131,6 +131,5 @@ function reset() {
 }
 
 function punto(){
-	if(!Number.isInteger(pantalla)) return
-	actualizarPantalla(pantalla += ".");
+	if(Number.isInteger(pantalla)) actualizarPantalla(pantalla += ".");
 }
